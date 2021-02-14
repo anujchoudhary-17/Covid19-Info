@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { VaccineDoses } from './model_classes/vaccine_doses';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  { path: "tab3/:date",
+  loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
+}
 ];
 @NgModule({
   imports: [

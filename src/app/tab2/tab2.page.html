@@ -1,17 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Ontario
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+
+
+
+  <ion-card color="warning">
+    <ion-card-header>
+      <ion-card-subtitle>ONTARIO STATUS OF CASES</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+
+      <!-- Covid 19 Updates Data here -->
+
+      <ion-label>Total Cases : {{ontarioTotalCases}}</ion-label>
+      <br>
+      <ion-label>Resolved : {{resolvedCases}}</ion-label>
+      <br>
+      <ion-label>Deaths : {{ontarioDeaths}}</ion-label>
+      <br>
+      <ion-label>Hospitalized : {{ontarioHospitalized}}</ion-label>
+      <br>
+      <ion-label>ICU : {{ontarioIcu}}</ion-label>
+      <br>
+      <ion-label>Ventilator : {{ontarioVentilator}}</ion-label>
+      <br>
+    </ion-card-content>
+  </ion-card>
+<ion-label>{{dateResult}} Follow Up</ion-label>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>SUMMARY OF TOTAL DOSES ADMINISTERED</ion-card-subtitle>
+    </ion-card-header>
+    <ion-list *ngFor="let item of vaccineDataList">
+      <ion-item>
+        <ion-label [routerLink]="['/tab3',item.report_date]" >{{item.report_date}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>

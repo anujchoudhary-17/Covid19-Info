@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { VaccineDoses } from '../model_classes/vaccine_doses';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'tab3',
+        path: 'tab3/:date',component: VaccineDoses,
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {

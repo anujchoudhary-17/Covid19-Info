@@ -1,17 +1,72 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>
-      Tab 3
+      Covid-19 Vaccine Data
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-card color="warning" >
+      <ion-card-header> 
+        <ion-card-subtitle >ONTARIO STATUS OF CASES</ion-card-subtitle> 
+       </ion-card-header> 
+       <ion-card-content> 
+         
+ <!-- Covid 19 Updates Data here -->
+ 
+ <ion-label>Total Cases : {{ontarioTotalCases}}</ion-label> 
+ <br>
+ <ion-label>Resolved : {{resolvedCases}}</ion-label> 
+ <br>
+ <ion-label>Deaths : {{ontarioDeaths}}</ion-label> 
+ <br>
+ <ion-label>Hospitalized : {{ontarioHospitalized}}</ion-label> 
+ <br>
+ <ion-label>ICU : {{ontarioIcu}}</ion-label> 
+ <br>
+ <ion-label>Ventilator : {{ontarioVentilator}}</ion-label> 
+ <br>
+
+ </ion-card-content> 
+     </ion-card>
+
+
+
+     <ion-card color="tertiary">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Report Data</ion-col>
+          <ion-col>{{vaccineData.report_date}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Previous Day Doses Administered</ion-col>
+          <ion-col>{{vaccineData.previous_day_doses_administered}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Total Doses Administered</ion-col>
+          <ion-col>{{vaccineData.total_doses_administered}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Total Doses in Fully Vaccinated individuals</ion-col>
+          <ion-col>{{vaccineData.total_doses_in_fully_vaccinated_individuals}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Total individuals Fully Vaccinated</ion-col>
+          <ion-col>{{vaccineData.total_individuals_fully_vaccinated}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+    <form #followUpForm="ngForm">
+      <ion-item>
+        <ion-input type="text" ngModel name="title" placeholder="Follow Up"></ion-input>
+      </ion-item>
+    
+      <button ion-button type="submit" style="padding: 10px;margin-left: 100px; margin-top : 10px;"  block>Send Message</button>
+    </form>
 </ion-content>

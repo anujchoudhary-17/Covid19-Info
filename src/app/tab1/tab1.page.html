@@ -1,17 +1,71 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Canada Summary
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card color="primary">
+     <ion-card-header> 
+       <ion-card-subtitle >COVID - 19 KEY UPDATES</ion-card-subtitle> 
+      </ion-card-header> 
+      <ion-card-content> 
+        
+<!-- Covid 19 Updates Data here -->
+
+<ion-label>Cases Today : {{totalCasesToday}}</ion-label> 
+<br>
+<ion-label>Total Cases : {{totalCases}}</ion-label> 
+<br>
+<ion-label>Active Cases : {{totalActiveCases}}</ion-label> 
+<br>
+<ion-label>Total Recovered : {{totalRecovered}}</ion-label> 
+<br>
+<ion-label>Deaths Today : {{todayDeath}}</ion-label> 
+<br>
+<ion-label>Total Deaths : {{totalDeaths}}</ion-label> 
+<br>
+<ion-label>Tested Today : {{testedToday}}</ion-label> 
+<br>
+<ion-label>Total Tested : {{totalTested}}</ion-label> 
+<br>
+<ion-label>Percentage Positive : {{percentagePositive | number:'1.1-1'}} %</ion-label> 
+<br>
+<ion-label>People Tested : {{peopleTested}}</ion-label> 
+<br>
+
+</ion-card-content> 
+    </ion-card>
+
+
+
+
+
+    <ion-card color="warning" (click)="goPage()" >
+      <ion-card-header> 
+        <ion-card-subtitle >ONTARIO STATUS OF CASES</ion-card-subtitle> 
+       </ion-card-header> 
+       <ion-card-content> 
+         
+ <!-- Covid 19 Updates Data here -->
+ 
+ <ion-label>Total Cases : {{ontarioTotalCases}}</ion-label> 
+ <br>
+ <ion-label>Resolved : {{resolvedCases}}</ion-label> 
+ <br>
+ <ion-label>Deaths : {{ontarioDeaths}}</ion-label> 
+ <br>
+ <ion-label>Hospitalized : {{ontarioHospitalized}}</ion-label> 
+ <br>
+ <ion-label>ICU : {{ontarioIcu}}</ion-label> 
+ <br>
+ <ion-label>Ventilator : {{ontarioVentilator}}</ion-label> 
+ <br>
+ 
+
+ </ion-card-content> 
+     </ion-card>
 </ion-content>
